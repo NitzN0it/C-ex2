@@ -1,13 +1,11 @@
 CC=gcc
 AR=ar
 CFLAGS=-Wall
-OBJ= myBank.o myBank.h
-all: mybanko mybank
-mybanko: $(OBJ)
-	$(CC) -c myBank.c -o myBank.o 
-mybank: myBank.o
-	$(CC) $(CFLAGS) myBank.o -o myBank
+OBJ= myBank.c main.c
+all: mybank
+mybank: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o main
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so myBank
+	rm -f *.o *.a *.so main
